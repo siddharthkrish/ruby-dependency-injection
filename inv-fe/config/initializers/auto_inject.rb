@@ -1,13 +1,13 @@
-#config/initializers/auto_inject.rb
+# config/initializers/auto_inject.rb
 class InvFe::Container
   extend Dry::Container::Mixin
 
   register('total_amount') do
-    PLRates::TotalAmountCalculator.new
+    Rails.configuration.x.total_calculator.new
   end
 
   register('emi') do
-    PLRates::EMICalculator.new
+    Rails.configuration.x.emi_calculator.new
   end
 end
 

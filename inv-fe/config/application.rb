@@ -11,6 +11,8 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+require 'total_amount_calculator'
+require 'emi_calculator'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
