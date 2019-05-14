@@ -31,5 +31,9 @@ module InvFe
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.eager_load_paths += Dir["#{Rails.root}/lib"]
-  end
+
+    # config for the calculators
+    config.x.total_calculator = PLRates::TotalAmountCalculator
+    config.x.emi_calculator = PLRates::EMICalculator
+    end
 end
