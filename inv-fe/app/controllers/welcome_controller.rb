@@ -10,9 +10,9 @@ class WelcomeController < ApplicationController
     if params[:amount] != nil then
       options = { amount: params[:amount].to_i,
                   tenure: params[:tenure].to_i,
-                  annual_interest: params[:interest_rate].to_i }
+                  annual_interest: params[:interest_rate].to_f }
 
-      @message = total_amount.calculate options
+      @message = (total_amount.calculate options).ceil
     end
   end
 
