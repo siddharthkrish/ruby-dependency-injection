@@ -4,7 +4,7 @@ require 'emi_calculator'
 
 # our main class
 class WelcomeController < ApplicationController
-  include AutoInject['total_amount']
+  include AutoInject['total_amount', 'emi']
 
   def index
     if params[:amount] != nil then
@@ -13,6 +13,7 @@ class WelcomeController < ApplicationController
                   annual_interest: params[:interest_rate].to_f }
 
       @message = (total_amount.calculate options).ceil
+      @emi_amount = (emi.calculate options).ceil
     end
   end
 

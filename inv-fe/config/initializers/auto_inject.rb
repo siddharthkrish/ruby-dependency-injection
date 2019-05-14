@@ -5,6 +5,10 @@ class InvFe::Container
   register('total_amount') do
     PLRates::TotalAmountCalculator.new
   end
+
+  register('emi') do
+    PLRates::EMICalculator.new
+  end
 end
 
 AutoInject = Dry::AutoInject(InvFe::Container)
